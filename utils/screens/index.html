@@ -351,7 +351,7 @@ ready(function() {
 		var src = one('#src_screen');
 		var value = src.value;
 		var show_all = one('#show_all')
-		if (value=='Custom') {
+		if (value=='Custom' || value=='Custom(自定义)') {
 			show_all.checked = false
 			show_all.disabled = true;
 			recalc()
@@ -488,7 +488,7 @@ ready(function() {
 	<fieldset>
 		<legend>Console(原机屏幕)</legend>
 		<select id="src_screen">
-			<option>Custom</option>
+			<option>Custom(自定义)</option>
 			<optgroup label="Handhelds">
 				<option>Game Boy/Game Boy Color (160x144)</option>
 				<option>Neo Geo Pocket   (160x152)</option>
