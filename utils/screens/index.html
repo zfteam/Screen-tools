@@ -199,7 +199,7 @@ function addUnit(pixel_width,pixel_height,inch_diagonal, sub_pixel_width,sub_pix
 		let scaleScreenArea = scaled_pixel_width*scaled_pixel_height;
 		let handleScreenArea = pixel_width*pixel_height;
 		let radio = scaleScreenArea/handleScreenArea;
-		html +='<br>Ratio(屏占比): '+radio.toFixed(2)*100+'%';
+		html +='<br>Ratio(屏占比): '+(radio*100).toFixed(1)+'%';
 	}
 	else{
 		html += 'insufficient pixels';
