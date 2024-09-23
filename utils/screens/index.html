@@ -333,7 +333,7 @@ ready(function() {
 	function changeDst() {
 		var dst = one('#dst_screen');
 		var value = dst.value
-		if (value=='Custom') {
+		if (value=='Custom' || value=='Custom(自定义)') {
 			one('#dst_custom').classList.add('custom')
 			return
 		}
