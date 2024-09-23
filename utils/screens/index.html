@@ -194,8 +194,16 @@ function addUnit(pixel_width,pixel_height,inch_diagonal, sub_pixel_width,sub_pix
 		
 	// var scl = one('#scale');
 	var html = ''
-	if (sub_inch_diagonal.toFixed(1)>0) html += `${sub_inch_diagonal.toFixed(1)}" at ${sub_scale%1==0?sub_scale:sub_scale.toFixed(1)}x`;
-	else html += 'insufficient pixels';
+	if (sub_inch_diagonal.toFixed(1)>0){
+		html += `Size(画面大小): ${sub_inch_diagonal.toFixed(1)}" at ${sub_scale%1==0?sub_scale:sub_scale.toFixed(1)}x`;
+		let scaleScreenArea = scaled_pixel_width*scaled_pixel_height;
+		let handleScreenArea = pixel_width*pixel_height;
+		let radio = scaleScreenArea/handleScreenArea;
+		html +='<br>Ratio(屏占比): '+radio.toFixed(2)*100+'%';
+	}
+	else{
+		html += 'insufficient pixels';
+	} 
 	if (cropped && (inch_ox<0 || inch_oy<0)) {
 		var ox = (pixel_width-scaled_pixel_width) / 2
 		var oy = (pixel_height-scaled_pixel_height) / 2
